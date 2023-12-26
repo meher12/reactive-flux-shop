@@ -29,6 +29,7 @@ Learn how to utilize WebClient, an essential tool in Spring Web Reactive for mak
    * RDBMS: The order service is using a relational database, such as PostgreSQL. RDBMS databases are relational, and they are better suited for storing structured data.
 
 ### Spring Data Reactive MongoDB/CRUD Application Development:
+Dive into the world of reactive MongoDB application development using Spring Data Reactive and the Reactive MongoDB driver.
 1. Spring Data Reactive MongoDB:
 
     | Blocking Driver | Reactive Driver |
@@ -51,6 +52,30 @@ Learn how to utilize WebClient, an essential tool in Spring Web Reactive for mak
    | Reduced Boilerplate Code  | Minimize repetitive code using the `BeanUtils.copyProperties` method.                                 |
    | Testing Isolation         | Facilitate independent testing of mapping logic in the utility class.                                  |
 3. Derived Query Methods in Spring
+
+### Spring Data R2DBC/CRUD Application Development
+Discover how to build reactive applications with relational databases using Spring Data R2DBC and the R2DBC driver.
+* R2dbc != jpa
+* Do not compare with/ except the features of hibernate!
+- Supported dbs: (please do check https://r2dbc.io/drivers/)
+  * H2(io.r2dbc:r2dbc-h2)
+  * MariaDB (org.mariadb:r2dbc-mariadb)
+  * Microsoft SQL Server (10.r2dbc:r2dbc-mssql)
+  * MySQL (dev.miku:r2dbc-mysql)
+  * Jasync-sql MySQL(com.github.jasync-sql:jasync-r2dbc-mysql)
+  * Postgres (io.r2dbc:r2dbc-postgresql)
+1. Create User-Service project
+2. Establish all layers necessary to manage user services, including service, DTO, entity, repository, and controller.
+3. R2DBC Drivers/ Config:
+   ```xml
+       h2 r2dbc:h2:mem:///userdb
+       postgres r2dbc:postgresql://localhost:5432/userdb
+       mysql r2dbc:mysql://localhost:3306/userdb
+       r2dbc:postgresql://username:password@localhost:5432/userdb
+   ```
+4. Resource and Dependency Injection for Executing SQL Queries with R2dbcEntityTemplate (`DataSetupService` class)
+5. R2DBC With Postgres
+
 
 
 
