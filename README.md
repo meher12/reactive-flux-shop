@@ -76,6 +76,9 @@ Discover how to build reactive applications with relational databases using Spri
 4. Resource and Dependency Injection for Executing SQL Queries with R2dbcEntityTemplate (`DataSetupService` class)
 5. R2DBC With Postgres
 
+### Reactive Microservices
+Explore the concept of reactive microservices
+1. Create Order-Service project
 
 
 

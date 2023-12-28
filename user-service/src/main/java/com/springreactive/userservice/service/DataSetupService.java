@@ -10,7 +10,7 @@ import org.springframework.util.StreamUtils;
 
 import java.nio.charset.StandardCharsets;
 
-@Service
+//@Service
 public class DataSetupService implements CommandLineRunner {
 
     // Injects an SQL script resource from the classpath
