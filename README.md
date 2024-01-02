@@ -88,6 +88,8 @@ but the use of sinks might not be necessary for every application. It is particu
 1. Sink Configuration
 2. Pushing Item Via Sink
 3. Exposing Event Stream by create `ProductStreamController` class
+## Unit/Integration Testing
+- We have used the two packages, WebClient and WebTestClient, inside the test part of the WebFlux-demo project.
 
 
 
