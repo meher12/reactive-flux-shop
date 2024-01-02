@@ -80,6 +80,16 @@ Discover how to build reactive applications with relational databases using Spri
 Explore the concept of reactive microservices
 1. Create Order-Service project
 
+## Server Sent Events (SSE)
+- Server-Sent Events (SSE) is a simple and efficient protocol for sending real-time updates from the server to the client over a single HTTP connection.
+In the context of Spring WebFlux, SSE is often used to enable server-to-client communication in a reactive and non-blocking way.
+- A Sink allows you to emit items (events) to a reactive stream in a non-blocking manner.
+but the use of sinks might not be necessary for every application. It is particularly well-suited for scenarios where you need to handle a large number of asynchronous events and want to take advantage of a non-blocking, backpressure-aware approach.
+1. Sink Configuration
+2. Pushing Item Via Sink
+3. Exposing Event Stream by create `ProductStreamController` class
+
+
 
 
 

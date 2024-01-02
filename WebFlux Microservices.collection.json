@@ -75,7 +75,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8091/product/658714dfc8f67969bdbbaab6",
+							"raw": "http://localhost:8091/product/658d9e94c224893660bae381",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -83,7 +83,7 @@
 							"port": "8091",
 							"path": [
 								"product",
-								"658714dfc8f67969bdbbaab6"
+								"658d9e94c224893660bae381"
 							]
 						}
 					},
@@ -261,7 +261,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"maher\",\n    \"balance\": 5000\n}\n",
+							"raw": "{\n    \"name\": \"jaun\",\n    \"balance\": 1500\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -329,7 +329,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8092/user/transaction?userId=2",
+							"raw": "http://localhost:8092/user/transaction?userId=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -342,7 +342,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "1"
 								}
 							]
 						}
@@ -373,6 +373,70 @@
 							"path": [
 								"user",
 								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order-service",
+			"item": [
+				{
+					"name": "place order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"productId\" : \"658719fd3a67b12c2b7742e7\", \n  \"userId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8093/order",
+							"host": [
+								"localhost"
+							],
+							"port": "8093",
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"productId\" : \"658719fd3a67b12c2b7742e6\", \n  \"userId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8093/order/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8093",
+							"path": [
+								"order",
+								"user",
+								"1"
 							]
 						}
 					},

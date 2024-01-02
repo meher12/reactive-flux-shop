@@ -8,11 +8,15 @@ import org.springframework.data.domain.Range;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import reactor.core.publisher.Sinks;
 
 @Service
 public class ProductService {
     @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
+    private Sinks.Many<ProductDto> sink;
 
     // Retrieves all products from the repository and converts them to DTOs.
     public Flux<ProductDto> getAllProduct() {
@@ -39,7 +43,8 @@ public class ProductService {
         return productDtoMono                // Start with the product DTO
                 .map(EntityDtoUtil::toEntity)  // Convert to entity
                 .flatMap(productRepository::insert)  // Insert into repository
-                .map(EntityDtoUtil::toDto);    // Convert back to DTO for response
+                .map(EntityDtoUtil::toDto)   // Convert back to DTO for response
+                .doOnNext(this.sink::tryEmitNext); // Using Sink
     }
 
     // Updates an existing product, ensuring ID consistency and conversion.
